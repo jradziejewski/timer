@@ -13,5 +13,9 @@ public:
 	int getSeconds();
 	int getMinutes();
 	int getHours();
+
+
+	//Methods
+	void printTime();
 };
 
