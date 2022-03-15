@@ -3,17 +3,20 @@
 #include <math.h>
 
 void Time::setSeconds(int number) {
-	if (number < 0) return;
+	if (number < 0) 
+		return;
 	seconds = number;
 }
 
 void Time::setMinutes(int number) {
-	if (number < 0) return;
+	if (number < 0) 
+		return;
 	minutes = number;
 }
 
 void Time::setHours(int number) {
-	if (number < 0) return; 
+	if (number < 0) 
+		return; 
 	hours = number;
 }
 
