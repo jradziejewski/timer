@@ -17,5 +17,6 @@ public:
 
 	//Methods
 	void printTime();
+	void refactorTime();
 };
 
