@@ -1,28 +1,20 @@
 #include "Time.h"
 #include <iostream>
+#include <math.h>
 
 void Time::setSeconds(int number) {
-	if (number < 0 || number > 59) {
-		std::cout << "Bledny format. Sprobuj ponownie\n";
-		return;
-	}
-	else seconds = number;
+	if (number < 0) return;
+	seconds = number;
 }
 
 void Time::setMinutes(int number) {
-	if (number < 0 || number > 59) {
-		std::cout << "Bledny format. Sproboj ponownie\n";
-		return;
-	}
-	else minutes = number;
+	if (number < 0) return;
+	minutes = number;
 }
 
 void Time::setHours(int number) {
-	if (number < 0 || number > 23) {
-		std::cout << "Bledny format. Sproboj ponownie\n";
-		return;
-	}
-	else hours = number;
+	if (number < 0) return; 
+	hours = number;
 }
 
 int Time::getSeconds() {
@@ -48,4 +40,18 @@ void Time::printTime() {
 
 	std::cout << "\n\n";
 
+}
+
+void Time::refactorTime() {
+	int temp;
+	if (seconds > 60) {
+		temp = seconds / 60;
+		minutes += floor(temp);
+		seconds -= 60 * temp;
+	}
+	if (minutes > 60) {
+		temp = minutes / 60;
+		hours += floor(temp);
+		minutes -= 60 * temp;
+	}
 }
