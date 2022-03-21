@@ -56,3 +56,11 @@ void Time::refactorTime() {
 		minutes -= 60 * temp;
 	}
 }
+
+Time Time::operator + (Time& _newTime) {
+	Time temp = _newTime;
+	temp.seconds += seconds;
+	temp.minutes += minutes;
+	temp.hours += hours;
+	return temp;
+}
