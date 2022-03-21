@@ -18,8 +18,5 @@ public:
 	//Methods
 	void printTime();
 	void refactorTime();
-
-	//Operator overloading
-	Time operator + (Time& _newTime);
 };
 
