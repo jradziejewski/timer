@@ -64,3 +64,8 @@ Time Time::operator + (Time& _newTime) {
 	temp.hours += hours;
 	return temp;
 }
+
+Time Time::operator += (Time& _newSeconds) {
+	seconds += _newSeconds.seconds;
+	return *this;
+}

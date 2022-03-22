@@ -21,5 +21,7 @@ public:
 
 	//Operator overloading
 	Time operator + (Time& _newTime);
+	Time operator += (Time& _newSeconds);
 };
+
 
