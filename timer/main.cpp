@@ -10,7 +10,7 @@ int main() {
 	t2.setSeconds(20);
 	tsum = t1 + t2;
 	tsum.printTime();
-	tsum += t1;
+	tsum += 765;
 	tsum.printTime();
 	return 0;
 }

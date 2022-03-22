@@ -30,7 +30,6 @@ int Time::getHours() {
 }
 
 void Time::printTime() {
-	system("CLS");
 	refactorTime();
 	std::cout << std::endl << "Czas: " << hours << ":";
 	if (minutes > 9) std::cout << minutes;
@@ -65,7 +64,7 @@ Time Time::operator + (Time& _newTime) {
 	return temp;
 }
 
-Time Time::operator += (Time& _newSeconds) {
-	seconds += _newSeconds.seconds;
+Time Time::operator += (int _newSeconds) {
+	seconds += _newSeconds;
 	return *this;
 }
