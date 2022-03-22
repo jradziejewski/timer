@@ -18,10 +18,14 @@ public:
 	//Methods
 	void printTime();
 	void refactorTime();
+	void convertToSeconds();
 
 	//Operator overloading
 	Time operator + (Time& _newTime);
 	Time operator += (int _newSeconds);
+
+	//Relational operators
+	bool operator == (Time& _time);
 };
 
 

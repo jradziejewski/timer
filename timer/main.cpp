@@ -12,5 +12,14 @@ int main() {
 	tsum.printTime();
 	tsum += 765;
 	tsum.printTime();
+	Time t3, t4;
+	t3.setMinutes(900);
+	t4.setHours(1);
+	t4.setMinutes(839);
+	t4.setSeconds(60);
+	if (t3 == t4) {
+		printf("\nTRUE\n");
+	}
+	else printf("\nFALSE\n");
 	return 0;
 }

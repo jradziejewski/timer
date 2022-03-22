@@ -2,6 +2,8 @@
 #include <iostream>
 #include <math.h>
 
+/* --------------- SETTERS --------------- */
+
 void Time::setSeconds(int number) {
 	if (number < 0) return;
 	seconds = number;
@@ -17,6 +19,8 @@ void Time::setHours(int number) {
 	hours = number;
 }
 
+/* --------------- GETTERS --------------- */
+
 int Time::getSeconds() {
 	return seconds;
 }
@@ -28,6 +32,8 @@ int Time::getMinutes() {
 int Time::getHours() {
 	return hours;
 }
+
+/* --------------- METHODS --------------- */
 
 void Time::printTime() {
 	refactorTime();
@@ -56,15 +62,33 @@ void Time::refactorTime() {
 	}
 }
 
+void Time::convertToSeconds() {
+	int temp;
+	temp = hours * 60;
+	minutes += temp;
+	temp = minutes * 60;
+	seconds += temp;
+}
+
+/* --------------- OPERATORS --------------- */
+
 Time Time::operator + (Time& _newTime) {
+	convertToSeconds();
 	Time temp = _newTime;
 	temp.seconds += seconds;
-	temp.minutes += minutes;
-	temp.hours += hours;
 	return temp;
 }
 
 Time Time::operator += (int _newSeconds) {
 	seconds += _newSeconds;
 	return *this;
+}
+
+bool Time::operator == (Time& _time) {
+	convertToSeconds();
+	_time.convertToSeconds();
+	if (seconds == _time.seconds) {
+		return true;
+	}
+	else return false;
 }
