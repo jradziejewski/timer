@@ -3,23 +3,28 @@
 #include <math.h>
 
 int main() {
-	Time t1, t2, tsum;
-	t1.setSeconds(15);
-	t1.refactorTime();
+	Time t1, t2;
+	t1.setHours(1);
+	t2.setSeconds(3444);
+	std::cout << "T1: ";
 	t1.printTime();
-	t2.setSeconds(20);
-	tsum = t1 + t2;
-	tsum.printTime();
-	tsum += 765;
-	tsum.printTime();
-	Time t3, t4;
-	t3.setMinutes(900);
-	t4.setHours(1);
-	t4.setMinutes(839);
-	t4.setSeconds(60);
-	if (t3 == t4) {
-		printf("\nTRUE\n");
+	std::cout << "\nT2: ";
+	t2.printTime();
+
+	if (t1 != t2) {
+		printf("\n\nisNotEqual ? True\n");
 	}
-	else printf("\nFALSE\n");
-	return 0;
+	else printf("isNotEqual ? False \n");
+	if (t1 == t2) {
+		printf("isEqual ? True \n");
+	}
+	else printf("isEqual ? False\n");
+	if (t1 > t2) {
+		printf("t1isBigger ? True\n");
+	}
+	else printf("t1IsBigger ? False\n");
+	if (t1 < t2) {
+		printf("t1isSmaller ? True\n");
+	}
+	else printf("t1isSmaller ? False\n");
 }

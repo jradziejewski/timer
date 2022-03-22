@@ -50,12 +50,12 @@ void Time::printTime() {
 
 void Time::refactorTime() {
 	int temp;
-	if (seconds > 60) {
+	if (seconds >= 60) {
 		temp = seconds / 60;
 		minutes += floor(temp);
 		seconds -= 60 * temp;
 	}
-	if (minutes > 60) {
+	if (minutes >= 60) {
 		temp = minutes / 60;
 		hours += floor(temp);
 		minutes -= 60 * temp;
@@ -65,8 +65,10 @@ void Time::refactorTime() {
 void Time::convertToSeconds() {
 	int temp;
 	temp = hours * 60;
+	hours = 0;
 	minutes += temp;
 	temp = minutes * 60;
+	minutes = 0;
 	seconds += temp;
 }
 
@@ -90,5 +92,24 @@ bool Time::operator == (Time& _time) {
 	if (seconds == _time.seconds) {
 		return true;
 	}
+	else return false;
+}
+
+bool Time::operator != (Time& _time) {
+	if (*this == _time) return false;
+	else return true;
+}
+
+bool Time::operator < (Time& _time) {
+	convertToSeconds();
+	_time.convertToSeconds();
+	if (seconds < _time.seconds) {
+		return true;
+	}
+	else return false;
+}
+
+bool Time::operator > (Time& _time) {
+	if (!(*this < _time) && !(*this == _time)) return true;
 	else return false;
 }
