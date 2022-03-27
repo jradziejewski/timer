@@ -113,3 +113,14 @@ bool Time::operator > (Time& _time) {
 	if (!(*this < _time) && !(*this == _time)) return true;
 	else return false;
 }
+
+bool Time::operator <= (Time& _time) {
+	if (*this < _time || *this == _time) return true;
+	else return false;
+}
+
+bool Time::operator >= (Time& _time) {
+	if (*this > _time || *this == _time) return true;
+	else return false;
+}
+

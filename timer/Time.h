@@ -29,6 +29,8 @@ public:
 	bool operator != (Time& _time);
 	bool operator < (Time& _time);
 	bool operator > (Time& _time);
+	bool operator >= (Time& _time);
+	bool operator <= (Time& _time);
 };
 
 
