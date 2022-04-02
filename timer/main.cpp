@@ -12,6 +12,11 @@ int main() {
 	t1 = harmonogram.getAt(0);
 	t2 = harmonogram.getAt(1);
 	harmonogram.getAt(500);
+	std::cout << "Number of times in harmonogram: " << harmonogram.count() << std::endl;
+	std::cout << "Sum of all times: ";
+	harmonogram.sumAll().printTime();
+	std::cout << std::endl;
+	harmonogram.printAll();
 
 	std::cout << "T1: ";
 	t1.printTime();
