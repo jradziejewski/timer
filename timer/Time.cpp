@@ -2,6 +2,35 @@
 #include <iostream>
 #include <math.h>
 
+/* ----------- CONSTRUCTORS */
+
+Time::Time(int _seconds, int _minutes, int _hours) {
+	seconds = _seconds;
+	minutes = _minutes;
+	hours = _hours;
+}
+
+Time::Time(int _seconds, int _minutes) {
+	seconds = _seconds;
+	minutes = _minutes;
+	hours = 0;
+}
+
+Time::Time(int _seconds) {
+	seconds = _seconds;
+	minutes = 0;
+	hours = 0;
+}
+
+Time::Time() {
+	seconds = 0;
+	minutes = 0;
+	hours = 0;
+}
+
+
+
+
 /* --------------- SETTERS --------------- */
 
 void Time::setSeconds(int number) {
@@ -15,7 +44,7 @@ void Time::setMinutes(int number) {
 }
 
 void Time::setHours(int number) {
-	if (number < 0) return; 
+	if (number < 0) return;
 	hours = number;
 }
 
