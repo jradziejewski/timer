@@ -1,14 +1,20 @@
 #pragma once
 class Time
 {
-private: 
+private:
 	int seconds = 0, hours = 0, minutes = 0;
-public: 
+public:
+	//Constructors
+	Time(int _seconds, int _minutes, int _hours);
+	Time(int _seconds, int _minutes);
+	Time(int _seconds);
+	Time();
+
 	//Setters
 	void setSeconds(int number);
 	void setMinutes(int number);
 	void setHours(int number);
-	
+
 	//Getters
 	int getSeconds();
 	int getMinutes();
