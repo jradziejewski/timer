@@ -16,12 +16,12 @@ public:
 
 	void add(Time time);
 	void pop();
+	void incrementAt(int index, int seconds);
 	void printAll();
+	void clear();
 	int count();
 	Time getAt(int index);
 	Time sumAll();
-
 	Harmonogram& operator = (const Harmonogram& _new);
 
 };
-

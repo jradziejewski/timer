@@ -48,6 +48,19 @@ void Harmonogram::add(Time time) {
 	timesArray[numOfElements++] = time;
 }
 
+void Harmonogram::incrementAt(int index, int seconds) {
+	try {
+		if (index < 0 || index >= numOfElements) {
+			throw 1;
+		}
+	}
+	catch (int exception) {
+		std::cout << "Error: couldn't get time from index " << index << ". No object on provided index.\n";
+		return;
+	}
+	timesArray[index] += seconds;
+}
+
 void Harmonogram::pop() {
 	if (numOfElements > 0) {
 		timesArray[numOfElements] = 0;
@@ -63,6 +76,12 @@ void Harmonogram::printAll() {
 	}
 }
 
+void Harmonogram::clear() {
+	while (numOfElements > 0) {
+		pop();
+	}
+}
+
 int Harmonogram::count() {
 	return numOfElements;
 }
@@ -75,6 +94,7 @@ Time Harmonogram::getAt(int index) {
 	}
 	catch (int exception) {
 		std::cout << "Error: couldn't get time from index " << index << ". No object on provided index.\n";
+		return 0;
 	}
 	return timesArray[index];
 }
