@@ -12,21 +12,28 @@ int main() {
 	t2.setSeconds(5);
 
 	Harmonogram h1, h2, h3;
-	h1.add(t1);
-	h1.add(t2);
-	h1.add(543);
-	h1.add(54555);
-	h1.add(54555);
-	h1.add(54555);
-	h1.add(54555);
-	h1.add(54555);
-	h1.add(54555);
-	h1.add(54555);
-	h1.add(54555);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h1.add(5);
+	h2 = withinSum(h1, 75);
 
-	//h2 = firstN(h1, 7);
-
-	//h2.printAll();
+	h2.printAll();
 }
 
 Harmonogram firstN(Harmonogram& _old, int n) {
@@ -36,5 +43,14 @@ Harmonogram firstN(Harmonogram& _old, int n) {
 		newHarmonogram.pop();
 	}
 
+	return newHarmonogram;
+}
+
+Harmonogram withinSum(Harmonogram& _old, Time sum) {
+	Harmonogram newHarmonogram(_old);
+
+	while (newHarmonogram.sumAll() > sum) {
+		newHarmonogram.pop();
+	}
 	return newHarmonogram;
 }

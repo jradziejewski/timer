@@ -32,7 +32,6 @@ void Harmonogram::expand() {
 	delete[] timesArray;
 
 	timesArray = temp;
-	delete[] temp;
 	initialize(numOfElements);
 }
 
