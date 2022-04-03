@@ -11,13 +11,17 @@ private:
 	void initialize(int from);
 public:
 	Harmonogram();
+	Harmonogram(Harmonogram& _new);
 	~Harmonogram();
 
 	void add(Time time);
+	void pop();
 	void printAll();
 	int count();
 	Time getAt(int index);
 	Time sumAll();
+
+	Harmonogram& operator = (const Harmonogram& _new);
 
 };
 

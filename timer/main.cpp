@@ -3,54 +3,38 @@
 #include "Harmonogram.h"
 #include <math.h>
 
+Harmonogram firstN(Harmonogram& _old, int n);
+Harmonogram withinSum(Harmonogram& _old, Time sum);
+
 int main() {
 	Time t1, t2;
-	Harmonogram harmonogram;
-	harmonogram.add(15);
-	harmonogram.add(10);
+	t1.setSeconds(352);
+	t2.setSeconds(5);
 
-	t1 = harmonogram.getAt(0);
-	t2 = harmonogram.getAt(1);
-	harmonogram.getAt(500);
-	std::cout << "Number of times in harmonogram: " << harmonogram.count() << std::endl;
-	std::cout << "Sum of all times: ";
-	harmonogram.sumAll().printTime();
-	std::cout << std::endl;
-	harmonogram.printAll();
+	Harmonogram h1, h2, h3;
+	h1.add(t1);
+	h1.add(t2);
+	h1.add(543);
+	h1.add(54555);
+	h1.add(54555);
+	h1.add(54555);
+	h1.add(54555);
+	h1.add(54555);
+	h1.add(54555);
+	h1.add(54555);
+	h1.add(54555);
 
-	std::cout << "T1: ";
-	t1.printTime();
-	std::cout << "\nT2: ";
-	t2.printTime();
+	//h2 = firstN(h1, 7);
 
-	Time tsum = t1 + t2;
-	std::cout << "\nSUMA: ";
-	tsum.printTime();
+	//h2.printAll();
+}
 
-	if (t1 != t2) {
-		printf("\n\nisNotEqual ? True\n");
-	}
-	else printf("isNotEqual ? False \n");
-	if (t1 == t2) {
-		printf("isEqual ? True \n");
-	}
-	else printf("isEqual ? False\n");
-	if (t1 > t2) {
-		printf("t1isBigger ? True\n");
-	}
-	else printf("t1IsBigger ? False\n");
-	if (t1 < t2) {
-		printf("t1isSmaller ? True\n");
-	}
-	else printf("t1isSmaller ? False\n");
+Harmonogram firstN(Harmonogram& _old, int n) {
+	Harmonogram newHarmonogram(_old);
 
-	if (t1 >= t2) {
-		printf("t1IsBiggerOrEqual ? True\n");
+	while (newHarmonogram.count() > n) {
+		newHarmonogram.pop();
 	}
-	else printf("t1IsBiggerOrEqual ? False\n");
 
-	if (t1 <= t2) {
-		printf("t1IsSmallerOrEqual ? True\n");
-	}
-	else printf("t1IsSmallerOrEqual ? False\n");
+	return newHarmonogram;
 }

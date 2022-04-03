@@ -6,6 +6,16 @@ Harmonogram::Harmonogram() {
 	numOfElements = 0;
 	timesArray = new Time[capacity];
 }
+
+Harmonogram::Harmonogram(Harmonogram& _new) {
+	capacity = _new.capacity;
+	numOfElements = _new.numOfElements;
+	timesArray = new Time[capacity];
+	for (int i = 0; i < _new.numOfElements; i++) {
+		timesArray[i] = _new.timesArray[i];
+	}
+}
+
 Harmonogram::~Harmonogram() {
 	delete[] timesArray;
 }
@@ -28,7 +38,7 @@ void Harmonogram::expand() {
 
 void Harmonogram::initialize(int from) {
 	for (int i = from; i < capacity; i++) {
-		timesArray = 0;
+		timesArray[i] = 0;
 	}
 }
 
@@ -38,6 +48,14 @@ void Harmonogram::add(Time time) {
 	}
 	timesArray[numOfElements++] = time;
 }
+
+void Harmonogram::pop() {
+	if (numOfElements > 0) {
+		timesArray[numOfElements] = 0;
+	}
+	numOfElements--;
+}
+
 
 void Harmonogram::printAll() {
 	for (int i = 0; i < numOfElements; i++) {
@@ -68,4 +86,15 @@ Time Harmonogram::sumAll() {
 		sum = sum + timesArray[i];
 	}
 	return sum;
+}
+
+
+Harmonogram& Harmonogram::operator = (const Harmonogram& _new) {
+	capacity = _new.capacity;
+	numOfElements = _new.numOfElements;
+	timesArray = new Time[capacity];
+	for (int i = 0; i < _new.numOfElements; i++) {
+		timesArray[i] = _new.timesArray[i];
+	}
+	return *this;
 }
