@@ -78,6 +78,7 @@ int main() {
 			else if (currentHarmonogram == 3) {
 				h3.incrementAt(index - 1, sec);
 			}
+			system("CLS");
 			break;
 		}
 		case '5':
