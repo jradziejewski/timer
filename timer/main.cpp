@@ -12,7 +12,6 @@ int main() {
 	Harmonogram h1, h2, h3;
 	addTimes(h1);
 
-
 	int currentHarmonogram = 1;
 	int menu = 1;
 	while (menu) {
@@ -69,6 +68,7 @@ int main() {
 			std::cin >> index;
 			std::cout << "\nPodaj o ile sekund chcesz zwiekszyc czas: ";
 			std::cin >> sec;
+			system("CLS");
 			if (currentHarmonogram == 1) {
 				h1.incrementAt(index - 1, sec);
 			}
@@ -92,9 +92,7 @@ int main() {
 			menu = 0;
 			break;
 		}
-
 	}
-	_CrtDumpMemoryLeaks();
 }
 
 Harmonogram firstN(Harmonogram& _old, int n) {
