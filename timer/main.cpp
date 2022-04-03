@@ -78,6 +78,7 @@ int main() {
 			else if (currentHarmonogram == 3) {
 				h3.incrementAt(index - 1, sec);
 			}
+
 			break;
 		}
 		case '5':
