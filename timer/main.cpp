@@ -9,7 +9,7 @@ Harmonogram withinSum(Harmonogram& _old, Time sum);
 void addTimes(Harmonogram& _new);
 
 int main() {
-	Harmonogram h1, h2, h3;
+	Harmonogram h1;
 	addTimes(h1);
 
 	int currentHarmonogram = 1;
@@ -22,9 +22,7 @@ int main() {
 		case '1':
 		{
 			system("CLS");
-			if (currentHarmonogram == 1) h1.printAll();
-			else if (currentHarmonogram == 2) h2.printAll();
-			else if (currentHarmonogram == 3) h3.printAll();
+			h1.printAll();
 			break;
 		}
 		case '2':
@@ -33,7 +31,7 @@ int main() {
 			int n;
 			std::cout << "Podaj ile pierwszych czasow zachowac: ";
 			std::cin >> n;
-			h2 = firstN(h1, n);
+			h1 = firstN(h1, n);
 			currentHarmonogram = 2;
 			break;
 		}
@@ -52,16 +50,14 @@ int main() {
 			std::cout << "\nPodaj sekundy:";
 			std::cin >> temp;
 			sum.setSeconds(temp);
-			h3 = withinSum(h1, sum);
+			h1 = withinSum(h1, sum);
 			currentHarmonogram = 3;
 			break;
 		}
 		case '4':
 		{
 			system("CLS");
-			if (currentHarmonogram == 1) h1.printAll();
-			else if (currentHarmonogram == 2) h2.printAll();
-			else if (currentHarmonogram == 3) h3.printAll();
+			h1.printAll();
 
 			std::cout << "\nPodaj numer czasu ktory chcesz zwiekszyc: ";
 			int index, sec;
@@ -69,22 +65,12 @@ int main() {
 			std::cout << "\nPodaj o ile sekund chcesz zwiekszyc czas: ";
 			std::cin >> sec;
 			system("CLS");
-			if (currentHarmonogram == 1) {
-				h1.incrementAt(index - 1, sec);
-			}
-			else if (currentHarmonogram == 2) {
-				h2.incrementAt(index - 1, sec);
-			}
-			else if (currentHarmonogram == 3) {
-				h3.incrementAt(index - 1, sec);
-			}
-
+			h1.incrementAt(index - 1, sec);
 			break;
 		}
 		case '5':
 		{
 			system("CLS");
-			currentHarmonogram = 1;
 			addTimes(h1);
 			break;
 		}
@@ -117,22 +103,22 @@ Harmonogram withinSum(Harmonogram& _old, Time sum) {
 
 void addTimes(Harmonogram& _new) {
 	_new.clear();
-	_new.add(5);
-	_new.add(5);
-	_new.add(5);
-	_new.add(45);
-	_new.add(5);
-	_new.add(55);
-	_new.add(54);
-	_new.add(5);
-	_new.add(5);
-	_new.add(35);
-	_new.add(5);
-	_new.add(54);
-	_new.add(5);
-	_new.add(5);
-	_new.add(55);
-	_new.add(5);
-	_new.add(56);
-	_new.add(65);
+	_new.add(535);
+	_new.add(12255);
+	_new.add(21);
+	_new.add(145);
+	_new.add(4115);
+	_new.add(535);
+	_new.add(564);
+	_new.add(1225);
+	_new.add(852);
+	_new.add(3115);
+	_new.add(5548);
+	_new.add(114);
+	_new.add(58);
+	_new.add(525);
+	_new.add(35515);
+	_new.add(1215);
+	_new.add(956);
+	_new.add(1245);
 }
