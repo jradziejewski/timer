@@ -12,7 +12,6 @@ int main() {
 	Harmonogram h1, h2, h3;
 	addTimes(h1);
 
-
 	int currentHarmonogram = 1;
 	int menu = 1;
 	while (menu) {
@@ -78,6 +77,7 @@ int main() {
 			else if (currentHarmonogram == 3) {
 				h3.incrementAt(index - 1, sec);
 			}
+			system("CLS");
 			break;
 		}
 		case '5':
@@ -92,9 +92,7 @@ int main() {
 			menu = 0;
 			break;
 		}
-
 	}
-	_CrtDumpMemoryLeaks();
 }
 
 Harmonogram firstN(Harmonogram& _old, int n) {
@@ -137,3 +135,4 @@ void addTimes(Harmonogram& _new) {
 	_new.add(56);
 	_new.add(65);
 }
+b
