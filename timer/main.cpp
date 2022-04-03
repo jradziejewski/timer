@@ -12,7 +12,6 @@ int main() {
 	Harmonogram h1;
 	addTimes(h1);
 
-	int currentHarmonogram = 1;
 	int menu = 1;
 	while (menu) {
 		char pick;
@@ -32,7 +31,6 @@ int main() {
 			std::cout << "Podaj ile pierwszych czasow zachowac: ";
 			std::cin >> n;
 			h1 = firstN(h1, n);
-			currentHarmonogram = 2;
 			break;
 		}
 		case '3':
@@ -51,7 +49,6 @@ int main() {
 			std::cin >> temp;
 			sum.setSeconds(temp);
 			h1 = withinSum(h1, sum);
-			currentHarmonogram = 3;
 			break;
 		}
 		case '4':
